@@ -79,6 +79,7 @@ export default Component.extend({
   },
 
   animate() {
+    let loadingSliderService = this.get('loadingSlider');
     this.set('isLoaded', false);
     let self = this,
         elapsedTime = 0,
@@ -112,6 +113,7 @@ export default Component.extend({
         run.later(function() {
           outer.empty();
           window.clearInterval(interval);
+          loadingSliderService.didLoad();
         }, 50);
       }
 

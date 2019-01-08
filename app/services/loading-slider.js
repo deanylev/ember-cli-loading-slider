@@ -12,5 +12,9 @@ export default Service.extend(Evented, {
 
   changeAttrs(attrs) {
     this.trigger('changeAttrs', attrs);
+  },
+
+  didLoad() {
+    this.trigger('load');
   }
 });
